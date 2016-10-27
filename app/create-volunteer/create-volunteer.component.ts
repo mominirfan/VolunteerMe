@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class CreateVolunteerComponent implements OnInit {
 	title : string;
+	volunteer: any;
 
 	ngOnInit() { }
 	constructor(){
 		this.title = "Volunteer Account Creation";
+
+		this.volunteer = 5;
+
+		
 		
 
 	}

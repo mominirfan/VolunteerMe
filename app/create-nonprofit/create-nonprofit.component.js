@@ -9,19 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-let CreateVolunteerComponent = class CreateVolunteerComponent {
+let CreateNonprofitComponent = class CreateNonprofitComponent {
     constructor() {
-        this.title = "Volunteer Account Creation";
-        this.volunteer = 5;
+        this.title = "Create Non-Profit Account";
+        this.nonprofit = 6;
     }
     ngOnInit() { }
 };
-CreateVolunteerComponent = __decorate([
+CreateNonprofitComponent = __decorate([
     core_1.Component({
-        selector: 'create-volunteer',
-        templateUrl: './app/create-volunteer/create-volunteer.component.html'
+        selector: 'create-nonprofit',
+        templateUrl: './app/create-nonprofit/create-nonprofit.component.html'
     }), 
     __metadata('design:paramtypes', [])
-], CreateVolunteerComponent);
-exports.CreateVolunteerComponent = CreateVolunteerComponent;
-//# sourceMappingURL=create-volunteer.component.js.map
+], CreateNonprofitComponent);
+exports.CreateNonprofitComponent = CreateNonprofitComponent;
+//# sourceMappingURL=create-nonprofit.component.js.map
