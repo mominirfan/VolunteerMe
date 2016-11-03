@@ -1,0 +1,48 @@
+#findprojects {
+    display: block;
+    position: relative; 
+    margin-left: auto;
+    margin-right: auto;
+    margin: 2% auto auto auto;
+    border: 0;
+    width: 200px;
+}
+
+#landingpagelogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+
+#instruction1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 3% 3% auto 4%;
+    width: 250px;
+}
+
+#instruction {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 3% 3% auto auto;
+    width: 250px;
+}
+
+#arrow {
+    margin: 5% 2% auto auto;
+    width: 7%;
+}
+
+hr {
+    border-width: 2px;
+    color: #000;
+}
+
+h2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 4% auto 0 auto; 
+    width: 200px;
+}
