@@ -9,17 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const landing_service_1 = require('./landing.service');
-let LandingComponent = class LandingComponent {
+let LandingService = class LandingService {
 };
-LandingComponent = __decorate([
-    core_1.Component({
-        selector: 'landing',
-        templateUrl: './app/landing/landing.html',
-        styleUrls: ['./app/landing/landing.css'],
-        providers: [landing_service_1.LandingService]
-    }), 
+LandingService = __decorate([
+    core_1.Injectable(), 
     __metadata('design:paramtypes', [])
-], LandingComponent);
-exports.LandingComponent = LandingComponent;
-//# sourceMappingURL=landing.component.js.map
+], LandingService);
+exports.LandingService = LandingService;
+//# sourceMappingURL=landing.service.js.map

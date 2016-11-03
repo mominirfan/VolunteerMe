@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const landing_service_1 = require('./landing.service');
-let LandingComponent = class LandingComponent {
+const platform_browser_1 = require('@angular/platform-browser');
+const app_component_1 = require('./app.component');
+let AppModule = class AppModule {
 };
-LandingComponent = __decorate([
-    core_1.Component({
-        selector: 'landing',
-        templateUrl: './app/landing/landing.html',
-        styleUrls: ['./app/landing/landing.css'],
-        providers: [landing_service_1.LandingService]
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule],
+        declarations: [app_component_1.AppComponent],
+        bootstrap: [app_component_1.AppComponent]
     }), 
     __metadata('design:paramtypes', [])
-], LandingComponent);
-exports.LandingComponent = LandingComponent;
-//# sourceMappingURL=landing.component.js.map
+], AppModule);
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map

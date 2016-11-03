@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const landing_service_1 = require('./landing.service');
-let LandingComponent = class LandingComponent {
+let AppComponent = class AppComponent {
+    constructor() {
+        this.title = "Hello World";
+    }
 };
-LandingComponent = __decorate([
+AppComponent = __decorate([
     core_1.Component({
-        selector: 'landing',
-        templateUrl: './app/landing/landing.html',
-        styleUrls: ['./app/landing/landing.css'],
-        providers: [landing_service_1.LandingService]
+        selector: 'app',
+        templateUrl: './app/app.html',
+        styleUrls: ['./app/app.css'],
     }), 
     __metadata('design:paramtypes', [])
-], LandingComponent);
-exports.LandingComponent = LandingComponent;
-//# sourceMappingURL=landing.component.js.map
+], AppComponent);
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map
