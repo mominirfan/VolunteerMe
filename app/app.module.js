@@ -16,6 +16,7 @@ const app_component_1 = require('./app.component');
 const landing_component_1 = require('./landing/landing.component');
 const create_volunteer_component_1 = require('./create-volunteer/create-volunteer.component');
 const create_nonprofit_component_1 = require('./create-nonprofit/create-nonprofit.component');
+const postProject_component_1 = require('./postProject/postProject.component');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,7 +26,8 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: '', component: landing_component_1.LandingComponent },
                 { path: 'create-volunteer', component: create_volunteer_component_1.CreateVolunteerComponent },
-                { path: 'create-nonprofit', component: create_nonprofit_component_1.CreateNonprofitComponent }
+                { path: 'create-nonprofit', component: create_nonprofit_component_1.CreateNonprofitComponent },
+                { path: 'postProject', component: postProject_component_1.PostProjectComponent }
             ]),
             forms_1.FormsModule
         ],
@@ -33,7 +35,8 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             landing_component_1.LandingComponent,
             create_volunteer_component_1.CreateVolunteerComponent,
-            create_nonprofit_component_1.CreateNonprofitComponent
+            create_nonprofit_component_1.CreateNonprofitComponent,
+            postProject_component_1.PostProjectComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }), 

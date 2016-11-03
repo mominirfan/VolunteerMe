@@ -7,6 +7,7 @@ import { AppComponent }   from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { CreateVolunteerComponent } from './create-volunteer/create-volunteer.component';
 import { CreateNonprofitComponent } from './create-nonprofit/create-nonprofit.component';
+import { PostProjectComponent } from './postProject/postProject.component';
 
 @NgModule({
   imports:      [ 
@@ -14,7 +15,8 @@ import { CreateNonprofitComponent } from './create-nonprofit/create-nonprofit.co
     RouterModule.forRoot([
       { path: '',component: LandingComponent},
       { path: 'create-volunteer', component: CreateVolunteerComponent},
-      { path: 'create-nonprofit', component: CreateNonprofitComponent}
+      { path: 'create-nonprofit', component: CreateNonprofitComponent},
+      { path: 'postProject', component: PostProjectComponent}
     ]),
     FormsModule
    ],
@@ -22,7 +24,8 @@ import { CreateNonprofitComponent } from './create-nonprofit/create-nonprofit.co
     AppComponent,
     LandingComponent,
     CreateVolunteerComponent,
-    CreateNonprofitComponent
+    CreateNonprofitComponent,
+    PostProjectComponent
   ],
   bootstrap:    [ AppComponent ]
 })
