@@ -12,6 +12,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     width: 250px;
 }
 
@@ -45,4 +46,7 @@ h2 {
     margin-right: auto;
     margin: 4% auto 0 auto; 
     width: 200px;
+}
+.btn{
+    float: center;
 }

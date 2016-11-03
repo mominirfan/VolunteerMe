@@ -19,7 +19,8 @@ let CreateNonprofitComponent = class CreateNonprofitComponent {
 CreateNonprofitComponent = __decorate([
     core_1.Component({
         selector: 'create-nonprofit',
-        templateUrl: './app/create-nonprofit/create-nonprofit.component.html'
+        templateUrl: './app/create-nonprofit/create-nonprofit.component.html',
+        styleUrls: ['./app/create-nonprofit/create-nonprofit.component.css']
     }), 
     __metadata('design:paramtypes', [])
 ], CreateNonprofitComponent);
