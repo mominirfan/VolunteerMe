@@ -10,6 +10,8 @@ import { CreateNonprofitComponent } from './create-nonprofit/create-nonprofit.co
 import { PostProjectComponent } from './postProject/postProject.component';
 import { NonprofitDashboardComponent } from './nonprofit-dashboard/nonprofit-dashboard.component';
 import { DiscrimPageComponent } from './discriminator-page/discriminator-page.component';
+import { ViewProjectComponent } from './viewProject/viewProject.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports:      [ 
@@ -20,7 +22,9 @@ import { DiscrimPageComponent } from './discriminator-page/discriminator-page.co
       { path: 'create-nonprofit', component: CreateNonprofitComponent},
       { path: 'postProject', component: PostProjectComponent},
       { path: 'nonprofit-dashboard', component: NonprofitDashboardComponent },
-      { path: 'discriminator-page', component: DiscrimPageComponent }
+      { path: 'discriminator-page', component: DiscrimPageComponent },
+      { path: 'viewProject', component: ViewProjectComponent}
+     // { path: 'login', component: LoginComponent }
     ]),
     FormsModule
    ],
@@ -31,7 +35,9 @@ import { DiscrimPageComponent } from './discriminator-page/discriminator-page.co
     CreateNonprofitComponent,
     PostProjectComponent,
     NonprofitDashboardComponent,
-    DiscrimPageComponent
+    DiscrimPageComponent,
+    ViewProjectComponent
+   // LoginComponent
   ],
   bootstrap:    [ AppComponent ]
 })
