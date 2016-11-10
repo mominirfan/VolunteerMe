@@ -1,3 +1,7 @@
+.btn{
+    margin: 5px;
+}
+
 #findprojects {
     display: block;
     position: relative; 

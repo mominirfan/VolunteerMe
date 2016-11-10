@@ -8,5 +8,11 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 
 export class DiscrimPageComponent {
+  constructor(private route: ActivatedRoute, private router: Router){
+
+  }
+  nav(rt: string){
+    this.router.navigateByUrl('');
+  }
 
 }
