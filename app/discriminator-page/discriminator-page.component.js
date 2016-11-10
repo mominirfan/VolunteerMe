@@ -10,23 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
-let AppComponent = class AppComponent {
+let DiscrimPageComponent = class DiscrimPageComponent {
     constructor(route, router) {
         this.route = route;
         this.router = router;
-        this.title = "Hello World";
     }
     nav(rt) {
         this.router.navigateByUrl('');
     }
 };
-AppComponent = __decorate([
+DiscrimPageComponent = __decorate([
     core_1.Component({
-        selector: 'app',
-        templateUrl: './app/app.html',
-        styleUrls: ['./app/app.css'],
+        selector: 'discriminator-page',
+        templateUrl: './app/discriminator-page/discriminator-page.html',
+        styleUrls: ['./app/discriminator-page/discriminator-page.css']
     }), 
     __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], DiscrimPageComponent);
+exports.DiscrimPageComponent = DiscrimPageComponent;
+//# sourceMappingURL=discriminator-page.component.js.map

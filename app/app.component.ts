@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app',
@@ -9,7 +10,10 @@ import { Component } from '@angular/core';
 export class AppComponent { 
 	title : string;
 
-	constructor(){
+	constructor(private route: ActivatedRoute, private router: Router){
 		this.title = "Hello World";
 	}
+  nav(rt: string){
+    this.router.navigateByUrl('');
+  }
 }

@@ -1,0 +1,32 @@
+hr {
+    border-width: 2px;
+    color: #000;
+}
+
+h2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 4% auto 0 auto; 
+    width: 200px;
+}
+
+#logo {
+  width: 50%;
+}
+
+#loginbtn {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin: auto auto auto auto;
+    width: 180px;
+}
+
+#loginbtntop {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin: 12.5% auto auto auto;
+    width: 180px;
+}
