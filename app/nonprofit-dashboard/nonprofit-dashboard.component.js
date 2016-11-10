@@ -10,12 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 let NonprofitDashboardComponent = class NonprofitDashboardComponent {
+    constructor() {
+        this.title = "Non-Profit Dashboard";
+    }
     ngOnInit() { }
 };
 NonprofitDashboardComponent = __decorate([
     core_1.Component({
         selector: 'nonprofit-dashboard',
-        templateUrl: './app/nonprofit-dashboard/nonprofit-dashboard.component.html'
+        templateUrl: './app/nonprofit-dashboard/nonprofit-dashboard.component.html',
+        styleUrls: ['./app/nonprofit-dashboard/nonprofit-dashboard.component.css']
     }), 
     __metadata('design:paramtypes', [])
 ], NonprofitDashboardComponent);
