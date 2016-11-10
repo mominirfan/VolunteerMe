@@ -17,6 +17,7 @@ const landing_component_1 = require('./landing/landing.component');
 const create_volunteer_component_1 = require('./create-volunteer/create-volunteer.component');
 const create_nonprofit_component_1 = require('./create-nonprofit/create-nonprofit.component');
 const postProject_component_1 = require('./postProject/postProject.component');
+const nonprofit_dashboard_component_1 = require('./nonprofit-dashboard/nonprofit-dashboard.component');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -27,7 +28,8 @@ AppModule = __decorate([
                 { path: '', component: landing_component_1.LandingComponent },
                 { path: 'create-volunteer', component: create_volunteer_component_1.CreateVolunteerComponent },
                 { path: 'create-nonprofit', component: create_nonprofit_component_1.CreateNonprofitComponent },
-                { path: 'postProject', component: postProject_component_1.PostProjectComponent }
+                { path: 'postProject', component: postProject_component_1.PostProjectComponent },
+                { path: 'nonprofit-dashboard', component: nonprofit_dashboard_component_1.NonprofitDashboardComponent }
             ]),
             forms_1.FormsModule
         ],
@@ -36,7 +38,8 @@ AppModule = __decorate([
             landing_component_1.LandingComponent,
             create_volunteer_component_1.CreateVolunteerComponent,
             create_nonprofit_component_1.CreateNonprofitComponent,
-            postProject_component_1.PostProjectComponent
+            postProject_component_1.PostProjectComponent,
+            nonprofit_dashboard_component_1.NonprofitDashboardComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }), 
