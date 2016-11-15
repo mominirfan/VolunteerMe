@@ -14,12 +14,37 @@ require('rxjs/add/operator/toPromise');
 let NonProfitService = class NonProfitService {
     constructor(http) {
         this.http = http;
-        this._apiUrl = 'http://private-a846b-volunteerme.apiary-mock.com/npdashboard';
+        this._apiUrl = "http://private-a846b-volunteerme.apiary-mock.com/npdashboard";
+    }
+    // public get(): Observable<any[]>{
+    //     return this.http.get(this._apiUrl)
+    //                     .map(this.extractData)
+    //                     .catch(this.handleError);
+    // }
+    extractData(res) {
+        let body = res.json();
+        return body.data || {};
     }
     get() {
         return this.http.get(this._apiUrl)
             .toPromise()
-            .then(x => x.json().data);
+            .then(x => x.json().data)
+            .catch(this.handleError);
+        // 
+    }
+    handleError(error) {
+        // In a real world app, we might use a remote logging infrastructure
+        let errMsg;
+        if (error instanceof http_1.Response) {
+            const body = error.json() || '';
+            const err = body.error || JSON.stringify(body);
+            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return Promise.reject(errMsg);
     }
 };
 NonProfitService = __decorate([

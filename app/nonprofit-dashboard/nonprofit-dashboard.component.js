@@ -15,7 +15,11 @@ let NonprofitDashboardComponent = class NonprofitDashboardComponent {
         this.nonProfitService = nonProfitService;
         this.title = "Non-Profit Dashboard";
         nonProfitService.get()
-            .then(x => this.nonprofits = x);
+            .then(x => {
+            this.nonprofits = x;
+            console.log(x);
+        });
+        console.log(this.nonprofits);
     }
     ngOnInit() { }
 };
