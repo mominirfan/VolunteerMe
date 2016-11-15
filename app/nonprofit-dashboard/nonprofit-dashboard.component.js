@@ -9,9 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
+const nonprofit_repository_service_1 = require('../repositories/nonprofit-repository.service');
 let NonprofitDashboardComponent = class NonprofitDashboardComponent {
-    constructor() {
+    constructor(nonProfitService) {
+        this.nonProfitService = nonProfitService;
         this.title = "Non-Profit Dashboard";
+        nonProfitService.get()
+            .then(x => this.nonprofits = x);
     }
     ngOnInit() { }
 };
@@ -21,7 +25,7 @@ NonprofitDashboardComponent = __decorate([
         templateUrl: './app/nonprofit-dashboard/nonprofit-dashboard.component.html',
         styleUrls: ['./app/nonprofit-dashboard/nonprofit-dashboard.component.css']
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [nonprofit_repository_service_1.NonProfitService])
 ], NonprofitDashboardComponent);
 exports.NonprofitDashboardComponent = NonprofitDashboardComponent;
 //# sourceMappingURL=nonprofit-dashboard.component.js.map

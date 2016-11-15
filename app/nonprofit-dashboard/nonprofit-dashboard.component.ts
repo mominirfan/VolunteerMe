@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NonProfitService } from '../repositories/nonprofit-repository.service';
 
 @Component({
 	selector: 'nonprofit-dashboard',
@@ -9,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class NonprofitDashboardComponent implements OnInit {
 
 	title: string;
-
+	nonprofits: any[];
 	ngOnInit() { }
 
-	constructor(){
+	constructor(private nonProfitService: NonProfitService ){
 		this.title = "Non-Profit Dashboard";
+		nonProfitService.get()
+		.then(x => this.nonprofits = x);
+
 	}
 
 }
