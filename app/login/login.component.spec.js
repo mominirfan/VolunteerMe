@@ -1,22 +1,22 @@
 "use strict";
 const testing_1 = require('@angular/core/testing');
-const landing_component_1 = require('./landing.component');
-describe('a landing component', () => {
+const login_component_1 = require('./login.component');
+describe('a login component', () => {
     let component;
     // register all needed dependencies
     beforeEach(() => {
         testing_1.TestBed.configureTestingModule({
             providers: [
-                landing_component_1.LandingComponent
+                login_component_1.LoginComponent
             ]
         });
     });
     // instantiation through framework injection
-    beforeEach(testing_1.inject([landing_component_1.LandingComponent], (LandingComponent) => {
-        component = LandingComponent;
+    beforeEach(testing_1.inject([login_component_1.LoginComponent], (LoginComponent) => {
+        component = LoginComponent;
     }));
     it('should have an instance', () => {
         expect(component).toBeDefined();
     });
 });
-//# sourceMappingURL=landing.component.spec.js.map
+//# sourceMappingURL=login.component.spec.js.map
