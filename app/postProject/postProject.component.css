@@ -1,9 +1,8 @@
-.postProject {
-/* Styles go here */
 
 h1{
   font-size: 100px;
-  color: green;
+  color: black;
+  font-family:Times New Roman;
 }
 
 .jumbotron{
@@ -12,7 +11,7 @@ h1{
 }
 
 #submitButton{
-  margin-right: 200px;
+  
 }
 
 button.btn-primary{
@@ -32,5 +31,6 @@ form{
 
 label{
   font-size:150%;
-  color: green;
+  color: black;
 }
+
