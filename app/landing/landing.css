@@ -42,6 +42,7 @@
 hr {
     border-width: 2px;
     color: #000;
+    margin: 7% auto auto auto;
 }
 
 h2 {
@@ -54,3 +55,14 @@ h2 {
 .btn{
     display: block;
 }
+
+#findproject {
+    margin: 2% auto auto 510px;
+    display: float;
+}
+
+#findprojectbtn {
+    padding: auto 25%;
+}
+
+
