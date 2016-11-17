@@ -19,7 +19,8 @@ let CreateVolunteerComponent = class CreateVolunteerComponent {
 CreateVolunteerComponent = __decorate([
     core_1.Component({
         selector: 'create-volunteer',
-        templateUrl: './app/create-volunteer/create-volunteer.component.html'
+        templateUrl: './app/create-volunteer/create-volunteer.component.html',
+        styleUrls: ['./app/create-volunteer/create-volunteer.component.css']
     }), 
     __metadata('design:paramtypes', [])
 ], CreateVolunteerComponent);

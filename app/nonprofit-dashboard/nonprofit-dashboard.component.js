@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require('@angular/core');
 let NonprofitDashboardComponent = class NonprofitDashboardComponent {
     constructor() {
-        this.title = "Non-Profit Dashboard";
+        this.title = "Projects";
     }
     ngOnInit() { }
 };
