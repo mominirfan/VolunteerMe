@@ -12,6 +12,8 @@ import { NonprofitDashboardComponent } from './nonprofit-dashboard/nonprofit-das
 import { DiscrimPageComponent } from './discriminator-page/discriminator-page.component';
 import { ViewProjectComponent } from './viewProject/viewProject.component';
 
+import { LoginComponent } from './login/login.component';
+
 @NgModule({
   imports:      [ 
     BrowserModule,
@@ -24,6 +26,7 @@ import { ViewProjectComponent } from './viewProject/viewProject.component';
       { path: 'discriminator-page', component: DiscrimPageComponent },
       { path: 'viewProject', component: ViewProjectComponent}
     ]),
+
     FormsModule
    ],
   declarations: [ 
@@ -35,6 +38,7 @@ import { ViewProjectComponent } from './viewProject/viewProject.component';
     NonprofitDashboardComponent,
     DiscrimPageComponent,
     ViewProjectComponent
+
   ],
   bootstrap:    [ AppComponent ]
 })

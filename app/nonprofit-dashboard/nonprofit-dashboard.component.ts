@@ -13,7 +13,7 @@ export class NonprofitDashboardComponent implements OnInit {
 	ngOnInit() { }
 
 	constructor(){
-		this.title = "Non-Profit Dashboard";
+		this.title = "Projects";
 	}
 
 }
