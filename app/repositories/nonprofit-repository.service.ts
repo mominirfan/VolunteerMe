@@ -28,6 +28,15 @@ export class NonProfitService{
         .catch(this.handleError);
         // 
     }
+
+    public getViewProject(): Promise<any[]>{
+        return this.http.get(this._apiUrl + "/viewproject")
+        .toPromise()
+        .then(  x => x.json().data as any[])
+        .catch(this.handleError);
+        // 
+    }
+
     private handleError (error: Response | any) {
   // In a real world app, we might use a remote logging infrastructure
         let errMsg: string;

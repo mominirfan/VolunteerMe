@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NonProfitService } from '../repositories/nonprofit-repository.service';
 
 @Component({
 	selector: 'viewProject',
@@ -8,4 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ViewProjectComponent implements OnInit {
 
 	ngOnInit() { }
+	get(){
+		
+	}
 }
