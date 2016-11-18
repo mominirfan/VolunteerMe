@@ -1,33 +1,45 @@
 <div class="jumbotron" align = "center">
       <h1>Post Project</h1>
 </div>
-<div id = "submitButton" align = "right">
-    <a class = "btn btn-primary" routerLink = "">Submit</a>
-</div>
 <form>
     <div class="form-group">
-        <label for="projName">*Project Name:</label>
+        <label for="projName">*Project_Title:</label>
         <input type="text" class="form-control" id="projName">
     </div>
     <div class = "form-group">
-        <label for="skills">*Skills Required:</label>
+        <label for="skills">*Req_Skills:</label>
         <textarea class="form-control" rows="3"  id = "skills"></textarea>
     </div>
     <div class="form-group">
-        <label for="describe">*Description:</label>
+        <label for="describe">*Project_Description:</label>
         <textarea class="form-control" rows="10" id = "describe"></textarea>
     </div>
     <div class="form-group">
-        <label for="location">*Location</label>
+        <label for="location">*Location:</label>
         <textarea class="form-control" rows="5" id = "location"></textarea>
     </div>
     <div class="form-group">
-        <label for="time">*Activity Time:</label>
-        <input type="text" class="form-control" id="time">
+        <label for="startdate">*Start_Date:</label>
+        <input type="date"  id="startdate">
+        <label for="enddate">*End_Date:</label>
+        <input type="date" id="enddate">
     </div>
     <div class="form-group">
-        <label for="remote">Remote Work?(Y/N)</label>
-        <input type="text" class="form-control" id="remote">
+        <label for="organization">Non-Projft:</label>
+        <input type="text" class="form-control" id="organization">
     </div>
+    <div class="form-group">
+        <label for="publishtime">Published_At:</label>
+        <input type="text" class="form-control" id="publishtime">
+    </div>
+    <div class="form-group">
+        <label for="remote">Remote Work?(Y/N):</label>
+        <input type="checkbox" id="remote">
+    </div>
+    <div class="form-group">
+        <label for="status">Completed?:</label>
+        <input type="checkbox" id="status">
+    </div>
+
+<a class="btn btn-primary btn-block btn-lg" id="submitButton" routerLink=""> Submit </a>
 </form>
-<a class="btn btn-primary btn-block btn-lg" routerLink=""> Return </a>
