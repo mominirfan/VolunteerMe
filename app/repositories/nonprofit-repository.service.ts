@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+
+
 import 'rxjs/add/operator/toPromise';
 
 
@@ -18,13 +20,16 @@ export class NonProfitService{
     // }
     private extractData(res: Response){
         let body = res.json();
-        return body.data || { };
+        return body || { };
     }
 
     public get(): Promise<any[]>{
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+		let options = new RequestOptions({ headers: headers});
+
         return this.http.get(this._apiUrl + "/npdashboard")
         .toPromise()
-        .then(  x => x.json().data as any[])
+        .then(x => x.json() as any[])
         .catch(this.handleError);
         // 
     }
