@@ -12,6 +12,7 @@ const core_1 = require('@angular/core');
 const platform_browser_1 = require('@angular/platform-browser');
 const router_1 = require('@angular/router');
 const forms_1 = require('@angular/forms');
+const http_1 = require('@angular/http');
 const app_component_1 = require('./app.component');
 const landing_component_1 = require('./landing/landing.component');
 const create_volunteer_component_1 = require('./create-volunteer/create-volunteer.component');
@@ -20,12 +21,14 @@ const postProject_component_1 = require('./postProject/postProject.component');
 const nonprofit_dashboard_component_1 = require('./nonprofit-dashboard/nonprofit-dashboard.component');
 const discriminator_page_component_1 = require('./discriminator-page/discriminator-page.component');
 const viewProject_component_1 = require('./viewProject/viewProject.component');
+const nonprofit_repository_service_1 = require('./repositories/nonprofit-repository.service');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
+            http_1.HttpModule,
             router_1.RouterModule.forRoot([
                 { path: '', component: landing_component_1.LandingComponent },
                 { path: 'create-volunteer', component: create_volunteer_component_1.CreateVolunteerComponent },
@@ -47,6 +50,7 @@ AppModule = __decorate([
             discriminator_page_component_1.DiscrimPageComponent,
             viewProject_component_1.ViewProjectComponent
         ],
+        providers: [nonprofit_repository_service_1.NonProfitService],
         bootstrap: [app_component_1.AppComponent]
     }), 
     __metadata('design:paramtypes', [])

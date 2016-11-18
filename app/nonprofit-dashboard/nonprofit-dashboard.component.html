@@ -7,7 +7,30 @@
     <div id = "create" class="btn btn-primary" routerLink = "/postProject"> Create New Project </div>
     <br>
     <br>
-    <div class="media">
+
+    <div class="media" *ngFor="let nonprofit of nonprofits">
+        
+            <span class="media-left">
+                
+                <img id="pic" src="http://xpenology.org/wp-content/themes/qaengine/img/default-thumbnail.jpg" alt="" />
+            </span>
+            <div class="media-body">
+                <h3 class="media-heading"> {{nonprofit.project_title }}</h3>
+                <h5>Volunteers:</h5>
+                <span *ngFor="let volunteer of nonprofit.volunteers">
+                    <h6>{{volunteer}}</h6>
+                </span>
+                <br>
+                <div class="sec-1-btn text-center btn btn-primary">Emails</div>
+            </div>
+            <span class="media-right">
+                <div class="btn btn-success"> Completed </div>
+                <div class="btn btn-danger"> Delete </div>
+            </span>
+
+    </div>
+    <!--<div class="media">
+>>>>>>> httpRupal
         
             <span class="media-left">
                 
@@ -46,5 +69,5 @@
                 <div class="btn btn-danger"> Delete </div>
             </span>
 
-    </div>
+    </div>-->
 </div>
