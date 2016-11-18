@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NonProfitService } from '../repositories/nonprofit-repository.service';
+import { Headers, RequestOptions } from '@angular/http'
+
 
 @Component({
 	selector: 'nonprofit-dashboard',

@@ -23,12 +23,14 @@ let NonProfitService = class NonProfitService {
     // }
     extractData(res) {
         let body = res.json();
-        return body.data || {};
+        return body || {};
     }
     get() {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        let options = new http_1.RequestOptions({ headers: headers });
         return this.http.get(this._apiUrl + "/npdashboard")
             .toPromise()
-            .then(x => x.json().data)
+            .then(x => x.json())
             .catch(this.handleError);
         // 
     }
