@@ -27,7 +27,11 @@
                         <label for="vol_skills">
                             Skills:
                         </label>
-                        <input id="vol_skills" class="form-control" [(ngModel)]="volunteer.skills" >
+                        <input id="vol_skills" class="form-control" [(ngModel)]="volunteer.description" >
+                        <label for="remove">
+                            Skills:
+                        </label>
+                        <input id="remove" class="form-control" [(ngModel)]="volunteer.website" >
                         <!--<ul class="list-group">
                             <li class="list-group-item">
                                 <div class="input-group">
@@ -45,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-info btn-block btn-lg" routerLink= ""> Submit </a>
+            <a class="btn btn-info btn-block btn-lg" routerLink= "" (click)="submit()"> Submit </a>
 
         </div>
     </div>

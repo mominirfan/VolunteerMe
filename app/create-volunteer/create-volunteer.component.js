@@ -9,12 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
+const nonprofit_repository_service_1 = require('../repositories/nonprofit-repository.service');
 let CreateVolunteerComponent = class CreateVolunteerComponent {
-    constructor() {
+    constructor(nonProfitService) {
+        this.nonProfitService = nonProfitService;
+        this.volunteer = {};
         this.title = "Volunteer Account Creation";
-        this.volunteer = 5;
     }
     ngOnInit() { }
+    submit() {
+        console.log(this.volunteer);
+        this.nonProfitService.post(this.volunteer);
+    }
 };
 CreateVolunteerComponent = __decorate([
     core_1.Component({
@@ -22,7 +28,7 @@ CreateVolunteerComponent = __decorate([
         templateUrl: './app/create-volunteer/create-volunteer.component.html',
         styleUrls: ['./app/create-volunteer/create-volunteer.component.css']
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [nonprofit_repository_service_1.NonProfitService])
 ], CreateVolunteerComponent);
 exports.CreateVolunteerComponent = CreateVolunteerComponent;
 //# sourceMappingURL=create-volunteer.component.js.map
