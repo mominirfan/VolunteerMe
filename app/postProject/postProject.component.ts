@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NonProfitService } from '../repositories/nonprofit-repository.service';
 
 @Component({
 	selector: 'postProject',
@@ -8,5 +9,12 @@ import { Component, OnInit } from '@angular/core';
 
 export class PostProjectComponent implements OnInit {
 
+	project: any = {};
 	ngOnInit() { }
+	constructor(private nonProfitService: NonProfitService){
+
+	}
+	submit(){
+		this.nonProfitService.postProject(this.project);
+	}
 }
