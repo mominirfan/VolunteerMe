@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateVolunteerComponent } from '../create-volunteer/create-volunteer.component';
+import { Headers, RequestOptions } from '@angular/http'
+import { NonProfitService } from '../repositories/nonprofit-repository.service';
 
 @Component({
 	selector: 'create-nonprofit',
@@ -9,11 +11,14 @@ import { CreateVolunteerComponent } from '../create-volunteer/create-volunteer.c
 
 export class CreateNonprofitComponent implements OnInit {
 	title: string;
-	nonprofit: any;
+	nonprofit: any = {};
 
 	ngOnInit() { }
-	constructor(){
+	constructor(private nonProfitService: NonProfitService){
+
 		this.title = "Create Non-Profit Account";
-		this.nonprofit = 6;
+	}
+	submit(){
+		this.nonProfitService.postNonProfit(this.nonprofit);
 	}
 }

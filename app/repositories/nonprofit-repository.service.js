@@ -26,6 +26,19 @@ let NonProfitService = class NonProfitService {
         let body = res.json();
         return body || {};
     }
+    postNonProfit(nonprofit) {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        return this.http
+            .post(this._apiUrl + "/create_nonprofit.php?add=true", "name=" + encodeURIComponent(nonprofit.name) +
+            "&email=" + encodeURIComponent(nonprofit.email) +
+            "&password=" + encodeURIComponent(nonprofit.password) +
+            "&description=" + encodeURIComponent(nonprofit.description) +
+            "&website=" + encodeURIComponent(nonprofit.website), options)
+            .toPromise()
+            .then(() => nonprofit)
+            .catch(x => alert(x.json().error));
+    }
     post(volunteer) {
         //let headers = new Headers({ 'Content-Type': 'application/json'});
         let headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
