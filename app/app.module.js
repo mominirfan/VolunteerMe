@@ -22,6 +22,7 @@ const nonprofit_dashboard_component_1 = require('./nonprofit-dashboard/nonprofit
 const discriminator_page_component_1 = require('./discriminator-page/discriminator-page.component');
 const viewProject_component_1 = require('./viewProject/viewProject.component');
 const nonprofit_repository_service_1 = require('./repositories/nonprofit-repository.service');
+const login_component_1 = require('./login/login.component');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -36,7 +37,8 @@ AppModule = __decorate([
                 { path: 'postProject', component: postProject_component_1.PostProjectComponent },
                 { path: 'nonprofit-dashboard', component: nonprofit_dashboard_component_1.NonprofitDashboardComponent },
                 { path: 'discriminator-page', component: discriminator_page_component_1.DiscrimPageComponent },
-                { path: 'viewProject', component: viewProject_component_1.ViewProjectComponent }
+                { path: 'viewProject', component: viewProject_component_1.ViewProjectComponent },
+                { path: 'login', component: login_component_1.LoginComponent }
             ]),
             forms_1.FormsModule
         ],
@@ -48,7 +50,8 @@ AppModule = __decorate([
             postProject_component_1.PostProjectComponent,
             nonprofit_dashboard_component_1.NonprofitDashboardComponent,
             discriminator_page_component_1.DiscrimPageComponent,
-            viewProject_component_1.ViewProjectComponent
+            viewProject_component_1.ViewProjectComponent,
+            login_component_1.LoginComponent
         ],
         providers: [nonprofit_repository_service_1.NonProfitService],
         bootstrap: [app_component_1.AppComponent]

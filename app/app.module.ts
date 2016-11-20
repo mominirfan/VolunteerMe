@@ -27,7 +27,8 @@ import { LoginComponent } from './login/login.component';
       { path: 'postProject', component: PostProjectComponent},
       { path: 'nonprofit-dashboard', component: NonprofitDashboardComponent },
       { path: 'discriminator-page', component: DiscrimPageComponent },
-      { path: 'viewProject', component: ViewProjectComponent}
+      { path: 'viewProject', component: ViewProjectComponent},
+      { path: 'login', component: LoginComponent }
     ]),
 
     FormsModule
@@ -40,7 +41,8 @@ import { LoginComponent } from './login/login.component';
     PostProjectComponent,
     NonprofitDashboardComponent,
     DiscrimPageComponent,
-    ViewProjectComponent
+    ViewProjectComponent,
+    LoginComponent
 
   ],
   providers: [ NonProfitService ],

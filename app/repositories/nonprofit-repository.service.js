@@ -16,6 +16,7 @@ let NonProfitService = class NonProfitService {
         this.http = http;
         this._apiUrl = "https://perunasoft.com/43231257";
         this._apiUrl2 = "http://private-a846b-volunteerme.apiary-mock.com";
+        this.email = "";
     }
     // public get(): Observable<any[]>{
     //     return this.http.get(this._apiUrl)
@@ -56,6 +57,12 @@ let NonProfitService = class NonProfitService {
         // .catch(x => alert(x.error));
         //.catch(this.handleError);
     }
+    setEmail(user) {
+        this.email = user.email;
+    }
+    getEmail() {
+        return this.email;
+    }
     postProject(project) {
         let headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new http_1.RequestOptions({ headers: headers });
@@ -69,6 +76,16 @@ let NonProfitService = class NonProfitService {
             "&req_skills=" + encodeURIComponent(project.req_skills) +
             "&published_at=" + encodeURIComponent(project.published_at) +
             "&completed=" + encodeURIComponent(project.completed), options)
+            .toPromise()
+            .then(() => project)
+            .catch(x => alert(x.json().error));
+    }
+    addVolunteer(project) {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        return this.http
+            .post(this._apiUrl + "/userstable.php?add=true", "project=" + encodeURIComponent(project.project_title) +
+            "&user=" + encodeURIComponent(this.email), options)
             .toPromise()
             .then(() => project)
             .catch(x => alert(x.json().error));

@@ -10,9 +10,9 @@ import 'rxjs/add/operator/toPromise';
 export class NonProfitService{
     private _apiUrl = "https://perunasoft.com/43231257";
     private _apiUrl2 = "http://private-a846b-volunteerme.apiary-mock.com";
-
+    private email : string;
     constructor(private http: Http){
-        
+        this.email = "";
     }
     // public get(): Observable<any[]>{
     //     return this.http.get(this._apiUrl)
@@ -58,6 +58,12 @@ export class NonProfitService{
             // .catch(x => alert(x.error));
             //.catch(this.handleError);
     }
+    public setEmail(user) {
+        this.email = user.email;
+    }
+    public getEmail() : string {
+        return this.email;
+    }
     public postProject(project) : Promise<any[]>{
         let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
         let options = new RequestOptions({ headers: headers });
@@ -77,6 +83,19 @@ export class NonProfitService{
             .toPromise()
             .then(() => project)
             .catch(x => alert(x.json().error));
+    }
+    public addVolunteer(project) : Promise<any[]>{
+        let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http
+        .post(this._apiUrl + "/userstable.php?add=true",
+        "project=" + encodeURIComponent(project.project_title) + 
+        "&user=" + encodeURIComponent(this.email),
+        options)
+        .toPromise()
+        .then(() => project)
+        .catch(x => alert(x.json().error));
     }
     public get(): Promise<any[]>{
         let headers = new Headers({ 'Content-Type': 'application/json'});

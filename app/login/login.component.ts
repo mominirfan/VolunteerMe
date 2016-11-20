@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NonProfitService } from '../repositories/nonprofit-repository.service';
 
 @Component({
 	selector: 'login',
-	templateUrl: 'login.component.html'
+	templateUrl: './app/login/login.component.html',
 })
 
 export class LoginComponent implements OnInit {
@@ -11,7 +12,16 @@ export class LoginComponent implements OnInit {
     loading = false;
 
     constructor(
-        private router: Router
+        private router: Router, private nonProfitService: NonProfitService
 	) { }
 	ngOnInit() { }
+	getModel() {
+		
+		return this.model;
+	}
+	submit(){
+		this.nonProfitService.setEmail(this.model);
+		console.log("In login, email = "+ this.nonProfitService.getEmail());
+		//this.router.navigateByUrl('');
+	}
 }

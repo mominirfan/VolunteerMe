@@ -19,11 +19,19 @@ let ViewProjectComponent = class ViewProjectComponent {
         });
     }
     ngOnInit() { }
+    signUp(project) {
+        //this.model = this.loginComponent.model;
+        this.email = this.nonProfitService.getEmail();
+        console.log(this.email);
+        //console.log("email: " + this.model['email']);
+        this.nonProfitService.addVolunteer(project);
+        //userstable.php?add=true
+    }
 };
 ViewProjectComponent = __decorate([
     core_1.Component({
         selector: 'viewProject',
-        templateUrl: './app/viewProject/viewProject.component.html'
+        templateUrl: './app/viewProject/viewProject.component.html',
     }), 
     __metadata('design:paramtypes', [nonprofit_repository_service_1.NonProfitService])
 ], ViewProjectComponent);

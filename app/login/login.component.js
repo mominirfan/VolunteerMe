@@ -10,20 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
+const nonprofit_repository_service_1 = require('../repositories/nonprofit-repository.service');
 let LoginComponent = class LoginComponent {
-    constructor(router) {
+    constructor(router, nonProfitService) {
         this.router = router;
+        this.nonProfitService = nonProfitService;
         this.model = {};
         this.loading = false;
     }
     ngOnInit() { }
+    getModel() {
+        return this.model;
+    }
+    submit() {
+        this.nonProfitService.setEmail(this.model);
+        console.log("In login, email = " + this.nonProfitService.getEmail());
+        //this.router.navigateByUrl('');
+    }
 };
 LoginComponent = __decorate([
     core_1.Component({
         selector: 'login',
-        templateUrl: 'login.component.html'
+        templateUrl: './app/login/login.component.html',
     }), 
-    __metadata('design:paramtypes', [router_1.Router])
+    __metadata('design:paramtypes', [router_1.Router, nonprofit_repository_service_1.NonProfitService])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map
