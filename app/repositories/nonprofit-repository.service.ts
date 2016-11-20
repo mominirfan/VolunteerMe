@@ -88,6 +88,15 @@ export class NonProfitService{
         .catch(this.handleError);
         // 
     }
+    public getProjects(): Promise<any[]>{
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+		let options = new RequestOptions({ headers: headers});
+
+        return this.http.get(this._apiUrl + "/projects.php?display=true")
+        .toPromise()
+        .then(x => x.json() as any[])
+        .catch(this.handleError);
+    }
     private handleError (error: Response | any) {
   // In a real world app, we might use a remote logging infrastructure
         let errMsg: string;

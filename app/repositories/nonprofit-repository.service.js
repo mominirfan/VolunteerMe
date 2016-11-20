@@ -82,6 +82,14 @@ let NonProfitService = class NonProfitService {
             .catch(this.handleError);
         // 
     }
+    getProjects() {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        return this.http.get(this._apiUrl + "/projects.php?display=true")
+            .toPromise()
+            .then(x => x.json())
+            .catch(this.handleError);
+    }
     handleError(error) {
         // In a real world app, we might use a remote logging infrastructure
         let errMsg;
