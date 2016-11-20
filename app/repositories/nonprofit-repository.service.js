@@ -48,8 +48,7 @@ let NonProfitService = class NonProfitService {
             .post(this._apiUrl + "/create-user.php?add=true", "name=" + encodeURIComponent(volunteer.name) +
             "&email= " + encodeURIComponent(volunteer.email) +
             "&password=" + encodeURIComponent(volunteer.password) +
-            "&description=" + encodeURIComponent(volunteer.description) +
-            "&website=" + encodeURIComponent(volunteer.website), options)
+            "&description=" + encodeURIComponent(volunteer.description), options)
             .toPromise()
             .then(() => volunteer)
             .catch(x => alert(x.json().error));
