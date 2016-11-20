@@ -31,11 +31,11 @@
 </nav>-->
 <div class="container">
     <ul class="nav nav-tabs" id="mylist">
-        <li class="active"><a data-toggle="tab" href="#menu1">Dog and Kitty City</a></li>
+        <li class="active"><a data-toggle="tab" href="#menu1"></a></li>
         <li><a data-toggle="tab" href="#menu2">Mustang Heroes</a></li>
 
         <!-- Large modal -->
-        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target=".bs-example-modal-lg" id="mybutton" routerLink='/postProject'>New Project</button>
+        <!--<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target=".bs-example-modal-lg" id="mybutton" routerLink='/postProject'>New Project</button>-->
 
         <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -78,19 +78,27 @@
                         <th>Requirements</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let project of projects">
                     <tr>
-
                         <td><img src="http://67.media.tumblr.com/31c6f48b20da2ebcd7974bb54c148461/tumblr_mw7dtm6Az91spqx5oo1_500.jpg" alt="Volunteer Comm. App Needed" style="width:304px;height:228px;"></td>
+                        <td>2015-08-05T08:40:51.620Z</td>
+                        <td>{{ project.project_title }}</td>
+                        <td>{{ project.project_description }}</td>
+                        <td>{{ project.project_location }}</td>
+                        <td>{{ project.start_date }}</td>
+                        <td>{{ project.end_date }}</td>
+                        <td>{{ project.req_skills }}</td>
+
+                        <!--<td><img src="http://67.media.tumblr.com/31c6f48b20da2ebcd7974bb54c148461/tumblr_mw7dtm6Az91spqx5oo1_500.jpg" alt="Volunteer Comm. App Needed" style="width:304px;height:228px;"></td>
                         <td>2015-08-05T08:40:51.620Z</td>
                         <td>Volunteer Comm. App Needed</td>
                         <td>Need a more efficient way for mass communication for volunteers</td>
                         <td>Dallas, TX</td>
                         <td>2015-08-05</td>
                         <td>2015-11-05</td>
-                        <td>iOS Devp., web devp., soft. eng.</td>
+                        <td>iOS Devp., web devp., soft. eng.</td>-->
                     </tr>
-                    <tr>
+                    <!--<tr>
 
                         <td><img src="http://dogecoin.com/imgs/dogecoin-300.png" alt="Donation App" style="width:304px;height:228px;"></td>
                         <td>2016-10-03T09:55:51.620Z</td>
@@ -100,7 +108,7 @@
                         <td>2015-08-05</td>
                         <td>2015-11-05</td>
                         <td>Android Devp., web devp., UI/UX.</td>
-                    </tr>
+                    </tr>-->
                 </tbody>
             </table>
         </div>
