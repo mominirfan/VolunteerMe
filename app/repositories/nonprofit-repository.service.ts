@@ -97,21 +97,33 @@ export class NonProfitService{
         .then(() => project)
         .catch(x => alert(x.json().error));
     }
-    public get(): Promise<any[]>{
-        let headers = new Headers({ 'Content-Type': 'application/json'});
-		let options = new RequestOptions({ headers: headers});
+    // public get(): Promise<any[]>{
+    //     // let headers = new Headers({ 'Content-Type': 'application/json'});
+	// 	// let options = new RequestOptions({ headers: headers});
 
-        return this.http.get(this._apiUrl2 + "/npdashboard")
-        .toPromise()
-        .then(x => x.json() as any[])
-        .catch(this.handleError);
-        // 
-    }
+    //     // return this.http.get(this._apiUrl2 + "/userstable.php?projvols=true",
+    //     // "project=" + encodeURIComponent(project), options)
+    //     // .toPromise()
+    //     // .then(x => x.json() as any[])
+    //     // .catch(this.handleError);
+    //     // 
+    // }
     public getProjects(): Promise<any[]>{
         let headers = new Headers({ 'Content-Type': 'application/json'});
 		let options = new RequestOptions({ headers: headers});
 
         return this.http.get(this._apiUrl + "/projects.php?display=true")
+        .toPromise()
+        .then(x => x.json() as any[])
+        .catch(this.handleError);
+    }
+    public getSpecificProjects(project): Promise<any[]>{
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+		let options = new RequestOptions({ headers: headers});
+
+        return this.http
+        .get(this._apiUrl + "/userstable.php?projvols=true"+
+        "project=" + encodeURIComponent(project), options)
         .toPromise()
         .then(x => x.json() as any[])
         .catch(this.handleError);
