@@ -1,41 +1,58 @@
-<div class="container">
-    <h1> {{ title }}</h1>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label for="nonprofit_name">Name:</label>
-                        <input id="nonprofit_name" class="form-control" [(ngModel)]="nonprofit.name" />
-                    </div>
-                        <label for="nonprofit_email">
-                            Email:
-                        </label>
-                        <input id="nonprofit_email" class="form-control" [(ngModel)]="nonprofit.email" />
-                        <label for="nonprofit_password">
-                            Password:
-                        </label>
-                        <input id="nonprofit_password" class = "form-control">
-                        <label for="nonprofit_password_check">
-                            Confirm Password:
-                        </label>
-                        <input id="nonprofit_password_check" class="form-control" [(ngModel)]="nonprofit.password" />
-                        <div class="form-group">
-                            <label for="description">Description:</label>
-                            <input id="description" class="form-control" [(ngModel)]="nonprofit.description" />
-                        </div>
-                        <div class="form-group">
-                            <label for="website">Website:</label>
-                            <input id="website" class="form-control" [(ngModel)]="nonprofit.website" />
-                        </div>
-                </div>
-            </div>
-                <a class="btn btn-info btn-block btn-lg" routerLink= "" (click)="submit()"> Submit </a>
-
-        </div>
-        
-    </div>
+<div class="jumbotron" align = "center">
+      <h1>{{ title }}</h1>
 </div>
+
+ <div class="form-group">
+        <label for="nonprofit_name">*Name: </label>
+        <input type="text" class="form-control" id="nonprofit_name" [(ngModel)]="nonprofit.name"/>
+</div>
+<div class="form-group">
+        <label for="nonprofit_email">*Email: </label>
+        <input type="text" class="form-control" id="nonprofit_email" [(ngModel)] = "nonprofit.email"/>
+</div>
+<div class="form-group">
+        <label for="nonprofit_password">*Password: </label>
+        <input type="text" class="form-control" id="nonprofit_password"/>
+</div>
+<div class="form-group">
+        <label for="nonprofit_password_check">*Confirm Password: </label>
+        <input type="text" class="form-control" id="nonprofit_password_check" [(ngModel)]="nonprofit.password"/>
+</div>
+<div class="form-group">
+        <label for="description">*Description: </label>
+        <textarea class="form-control" rows="10" id = "description" [(ngModel)]="nonprofit.description"></textarea>
+</div>
+<div class="form-group">
+        <label for="website">Website: </label>
+        <input type="text" class="form-control" id="website" [(ngModel)] = "nonprofit.website"/>
+</div>
+
+<!--
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="nonprofit_name">Name:</label>
+                    <input id="nonprofit_name" class="form-control" [(ngModel)]="nonprofit.name" />
+                </div>
+                    <label for="nonprofit_email">
+                        Email:
+                    </label>
+                    <input id="nonprofit_email" class="form-control" [(ngModel)]="nonprofit.email" />
+                    <label for="nonprofit_password">
+                        Password:
+                    </label>
+                    <input id="nonprofit_password" class = "form-control">
+                    <label for="nonprofit_password_check">
+                        Confirm Password:
+                    </label>
+                    <input id="nonprofit_password_check" class="form-control" [(ngModel)]="nonprofit.password" />
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input id="description" class="form-control" [(ngModel)]="nonprofit.description" />
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website:</label>
+                        <input id="website" class="form-control" [(ngModel)]="nonprofit.website" />
+                    </div>
+            </div>
+-->
+            <a class="btn btn-info btn-block btn-lg" routerLink= "" (click)="submit()"> Submit </a>
