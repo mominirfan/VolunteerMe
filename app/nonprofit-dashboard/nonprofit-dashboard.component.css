@@ -7,6 +7,10 @@ img{
 }
 .media{
     margin: 30px;
+    padding: 50px 30px 50px 80px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: lightgreen;
 }
 
 #create{
