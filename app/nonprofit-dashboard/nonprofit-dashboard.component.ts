@@ -19,12 +19,13 @@ export class NonprofitDashboardComponent implements OnInit {
 
 	constructor(private nonProfitService: NonProfitService ){
 		this.title = "Projects";
-		this.nonProfitService.getSpecificProjects("TESTING")
+		this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
 		.then(x => {
 			this.projects = x;
 			nonProfitService.getVolunteers("dsgl")
 				.then( x => {
-					this.volunteers.push(x);
+					console.log(x);
+					//this.volunteers.push(x);
 					//this.projects.volunteers = x;
 			});
 			// for(var i=0; i<this.projects.length;i++){
