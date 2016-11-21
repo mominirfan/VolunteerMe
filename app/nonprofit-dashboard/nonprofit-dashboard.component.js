@@ -17,14 +17,18 @@ let NonprofitDashboardComponent = class NonprofitDashboardComponent {
         this.nonProfitService.getSpecificProjects("TESTING")
             .then(x => {
             this.projects = x;
-            console.log(x);
+            nonProfitService.getVolunteers("dsgl")
+                .then(x => {
+                this.volunteers.push(x);
+                //this.projects.volunteers = x;
+            });
+            // for(var i=0; i<this.projects.length;i++){
+            // 	nonProfitService.getVolunteers(this.projects[i].project_title)
+            // 	.then( x => {
+            // 		this.projects[i].volunteers = x;
+            // });
         });
-        // for(var i=0; i<this.projects.length;i++){
-        // 	nonProfitService.getVolunteers(project?)
-        // 	.then( x => {
-        // 		this.projects[i].volunteers = x;
-        // 	});
-        // }
+        // });
     }
     ngOnInit() { }
     getProjects() {

@@ -91,7 +91,7 @@ let NonProfitService = class NonProfitService {
         let options = new http_1.RequestOptions({ headers: headers });
         return this.http
             .post(this._apiUrl + "/userstable.php?add=true", "project=" + encodeURIComponent(project.project_title) +
-            "&user=" + encodeURIComponent(this.email), options)
+            "&email=" + encodeURIComponent(this.email), options)
             .toPromise()
             .then(() => project)
             .catch(x => alert(x.json().error));
@@ -124,12 +124,12 @@ let NonProfitService = class NonProfitService {
             .then(x => x.json())
             .catch(this.handleError);
     }
-    getVolunteers(nonProfit) {
+    getVolunteers(project) {
         let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         let options = new http_1.RequestOptions({ headers: headers });
         return this.http
             .get(this._apiUrl + "/userstable.php?projvols=true" +
-            "&project=" + encodeURIComponent(nonProfit), options)
+            "&project=" + encodeURIComponent(project), options)
             .toPromise()
             .then(x => x.json())
             .catch(this.handleError);
