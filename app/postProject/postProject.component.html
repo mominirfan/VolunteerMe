@@ -2,8 +2,8 @@
       <h1>Post Project</h1>
 </div>
     <div class="form-group">
-        <label for="np_name">*Non-Profit Name: </label>
-        <input type="text" class="form-control" id="np_name" [(ngModel)] = "project.np_name"/>
+        <label for="np_email">*Non-Profit Email: </label>
+        <input type="text" class="form-control" id="np_email" [(ngModel)] = "project.np_email"/>
     </div>
    
     <div class="form-group">
@@ -46,4 +46,4 @@
         <input type="checkbox" name="check[0]" id="status" value="1" [(ngModel)]="project.completed">
     </div>-->
 
-<a class="btn btn-primary btn-block btn-lg" id="submitButton" routerLink="" (click) = "submit()"> Submit </a>
+<a class="btn btn-primary btn-block btn-lg" id="submitButton" routerLink="/nonprofit-dashboard" (click) = "submit()"> Submit </a>

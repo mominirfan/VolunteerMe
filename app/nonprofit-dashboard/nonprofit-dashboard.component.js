@@ -14,11 +14,11 @@ let NonprofitDashboardComponent = class NonprofitDashboardComponent {
     constructor(nonProfitService) {
         this.nonProfitService = nonProfitService;
         this.title = "Projects";
-        // nonProfitService.getSpecificProjects(nonprofit)
-        // .then(x => {
-        // 	this.projects = x;
-        // 	console.log(x);
-        // });
+        this.nonProfitService.getSpecificProjects("TESTING")
+            .then(x => {
+            this.projects = x;
+            console.log(x);
+        });
         // for(var i=0; i<this.projects.length;i++){
         // 	nonProfitService.getVolunteers(project?)
         // 	.then( x => {

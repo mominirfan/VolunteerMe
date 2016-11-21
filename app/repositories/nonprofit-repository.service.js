@@ -74,7 +74,7 @@ let NonProfitService = class NonProfitService {
         let options = new http_1.RequestOptions({ headers: headers });
         return this.http
             .post(this._apiUrl + "/projects.php?add=true", "project_title=" + encodeURIComponent(project.project_title) +
-            "&nonprofit=" + encodeURIComponent(project.np_name) +
+            "&nonprofit=" + encodeURIComponent(project.np_email) +
             "&project_description=" + encodeURIComponent(project.project_description) +
             "&location=" + encodeURIComponent(project.location) +
             "&start_date=" + encodeURIComponent(project.start_date) +
@@ -96,7 +96,16 @@ let NonProfitService = class NonProfitService {
             .then(() => project)
             .catch(x => alert(x.json().error));
     }
-    getVolunteers() { }
+    getSpecificProjects(nonProfit) {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        return this.http
+            .get(this._apiUrl + "/projects.php?getProjects=true" +
+            "&np=" + encodeURIComponent(nonProfit), options)
+            .toPromise()
+            .then(x => x.json())
+            .catch(this.handleError);
+    }
     // public get(): Promise<any[]>{
     //     // let headers = new Headers({ 'Content-Type': 'application/json'});
     // 	// let options = new RequestOptions({ headers: headers});
@@ -115,16 +124,16 @@ let NonProfitService = class NonProfitService {
             .then(x => x.json())
             .catch(this.handleError);
     }
-    // public getSpecificProjects(nonProfit): Promise<any[]>{
-    //     let headers = new Headers({ 'Content-Type': 'application/json'});
-    // 	let options = new RequestOptions({ headers: headers});
-    //     return this.http
-    //     // .get(this._apiUrl + "/userstable.php?projvols=true"+
-    //     // "project=" + encodeURIComponent(no), options)
-    //     .toPromise()
-    //     .then(x => x.json() as any[])
-    //     .catch(this.handleError);
-    // }
+    getVolunteers(nonProfit) {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        return this.http
+            .get(this._apiUrl + "/userstable.php?projvols=true" +
+            "&project=" + encodeURIComponent(nonProfit), options)
+            .toPromise()
+            .then(x => x.json())
+            .catch(this.handleError);
+    }
     handleError(error) {
         // In a real world app, we might use a remote logging infrastructure
         let errMsg;
