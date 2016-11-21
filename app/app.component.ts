@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NonProfitService } from './repositories/nonprofit-repository.service';
 
 @Component({
   selector: 'app',
@@ -11,14 +12,22 @@ export class AppComponent {
 	title : string;
   login : boolean;
   nonprofit : boolean;
-
-	constructor(private route: ActivatedRoute, private router: Router){
+  
+  ngOnInit(){
+    
+  }
+  ngDoCheck(){
+    this.login = this.nonProfitService.getLogin();
+  }
+	constructor(private route: ActivatedRoute, private router: Router, private nonProfitService: NonProfitService){
 		this.title = "Hello World";
-    this.login = false;
+    //this.login = false;
+    this.login = this.nonProfitService.getLogin();
     this.nonprofit = false;
 	}
 
   logout(){
+    this.nonProfitService.setLogin(false);
     this.login = false;
   }
 

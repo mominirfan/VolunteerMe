@@ -14,6 +14,7 @@ export class NonProfitService{
     constructor(private http: Http){
         this.email = "";
     }
+    private login : boolean;
     // public get(): Observable<any[]>{
     //     return this.http.get(this._apiUrl)
     //                     .map(this.extractData)
@@ -22,6 +23,12 @@ export class NonProfitService{
     private extractData(res: Response){
         let body = res.json();
         return body || { };
+    }
+    public setLogin(val){
+        this.login = val;
+    }
+    public getLogin(){
+        return this.login;
     }
     public postNonProfit(nonprofit) : Promise<any[]>{
         let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});

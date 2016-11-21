@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 	}
 	submit(){
 		this.nonProfitService.setEmail(this.model);
+		this.nonProfitService.setLogin(true);
 		console.log("In login, email = "+ this.nonProfitService.getEmail());
 		//this.router.navigateByUrl('');
 	}
