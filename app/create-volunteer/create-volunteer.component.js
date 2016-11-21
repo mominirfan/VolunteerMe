@@ -19,6 +19,7 @@ let CreateVolunteerComponent = class CreateVolunteerComponent {
     ngOnInit() { }
     submit() {
         console.log(this.volunteer);
+        this.nonProfitService.setEmail(this.volunteer);
         this.nonProfitService.post(this.volunteer);
     }
 };

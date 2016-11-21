@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreateVolunteerComponent } from '../create-volunteer/create-volunteer.component';
 import { Headers, RequestOptions } from '@angular/http'
 import { NonProfitService } from '../repositories/nonprofit-repository.service';
+import { NonprofitDashboardComponent } from '../nonprofit-dashboard/nonprofit-dashboard.component';
 
 @Component({
 	selector: 'create-nonprofit',
@@ -19,6 +20,7 @@ export class CreateNonprofitComponent implements OnInit {
 		this.title = "Create Non-Profit Account";
 	}
 	submit(){
+		this.nonProfitService.setEmail(this.nonprofit);
 		this.nonProfitService.postNonProfit(this.nonprofit);
 	}
 }

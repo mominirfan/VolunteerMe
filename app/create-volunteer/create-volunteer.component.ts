@@ -18,6 +18,8 @@ export class CreateVolunteerComponent implements OnInit {
 	}
 	submit(){
 		console.log(this.volunteer);
+		this.nonProfitService.setEmail(this.volunteer);
+
 		this.nonProfitService.post(this.volunteer);
 
 	}

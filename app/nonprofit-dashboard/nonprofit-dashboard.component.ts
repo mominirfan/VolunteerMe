@@ -22,7 +22,7 @@ export class NonprofitDashboardComponent implements OnInit {
 		this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
 		.then(x => {
 			this.projects = x;
-			nonProfitService.getVolunteers("dsgl")
+			this.nonProfitService.getVolunteers("dsgl")
 				.then( x => {
 					console.log(x);
 					//this.volunteers.push(x);
