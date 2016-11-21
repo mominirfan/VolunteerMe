@@ -8,16 +8,50 @@
     <br>
     <br>
 
-    <div *ngIf="projects">
 
-    <div class="media" *ngFor="let project of projects">
+    <div *ngIf="projects">
+    <!--<div class="media" *ngFor="let nonprofit of nonprofits">-->
         
+            <!--
             <span class="media-left">
                 
                 <img id="pic" src="http://xpenology.org/wp-content/themes/qaengine/img/default-thumbnail.jpg" alt="" />
             </span>
+            -->
+            <table class="table table-striped" id="mytable">
+                <thead>
+                     <tr>
+                        <!--<th>Image</th>-->
+                        <th>Project Title</th>
+                        <th>Volunteers</th>
+                        <th>   </th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let project of projects">
+                     <tr>
+                        <td> {{project.project_title }}</td>
+                        <td>   
+                            <span *ngFor="let volunteer of project.volunteers">
+                                <h6>{{volunteer}}</h6>
+                            </span>
+                        </td>
+                        <td>
+                        <span class="media-right">
+                            <div class="btn btn-success"> Completed </div>
+                            <div class="btn btn-danger"> Delete </div>
+                        </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!--
             <div class="media-body">
+<<<<<<< HEAD
                 <h3 class="media-heading"> {{ project.project_title }}</h3>
+=======
+                <h2 class="media-heading"> {{nonprofit.project_title }}</h2>
+>>>>>>> Noimage
                 <h5>Volunteers:</h5>
                 <span *ngFor="let volunteer of project.volunteers">
                     <h6>{{ volunteer }}</h6>
@@ -29,8 +63,9 @@
                 <div class="btn btn-success"> Completed </div>
                 <div class="btn btn-danger"> Delete </div>
             </span>
+            -->
 
-    </div>
+    
     </div>
     <!--<div class="media">
 >>>>>>> httpRupal

@@ -1,6 +1,19 @@
 .create-volunteer {
 
 }
-.panel {
-    width: 100%;
+h1{
+  font-size: 100px;
+  color: black;
+  font-family:Times New Roman;
+}
+
+
+div.form-group{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+label{
+  font-size:150%;
+  color: black;
 }
