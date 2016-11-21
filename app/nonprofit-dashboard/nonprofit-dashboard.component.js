@@ -13,7 +13,25 @@ const nonprofit_repository_service_1 = require('../repositories/nonprofit-reposi
 let NonprofitDashboardComponent = class NonprofitDashboardComponent {
     constructor(nonProfitService) {
         this.nonProfitService = nonProfitService;
-        this.title = "Projects";
+        this.title = "My Dashboard";
+        // this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
+        // .then(x => {
+        // 	this.projects = x;
+        // 	this.nonProfitService.getVolunteers("dsgl")
+        // 		.then( x => {
+        // 			console.log(x);
+        // 			//this.volunteers.push(x);
+        // 			//this.projects.volunteers = x;
+        // 	});
+        // 	// for(var i=0; i<this.projects.length;i++){
+        // 	// 	nonProfitService.getVolunteers(this.projects[i].project_title)
+        // 	// 	.then( x => {
+        // 	// 		this.projects[i].volunteers = x;
+        // 	// });
+        // });
+        // });
+    }
+    ngOnInit() {
         this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
             .then(x => {
             this.projects = x;
@@ -29,9 +47,7 @@ let NonprofitDashboardComponent = class NonprofitDashboardComponent {
             // 		this.projects[i].volunteers = x;
             // });
         });
-        // });
     }
-    ngOnInit() { }
     getProjects() {
     }
 };

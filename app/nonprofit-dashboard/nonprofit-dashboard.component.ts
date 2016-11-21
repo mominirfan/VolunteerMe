@@ -14,11 +14,7 @@ export class NonprofitDashboardComponent implements OnInit {
 	title: string;
 	projects: any[];
 	volunteers: any[];
-	ngOnInit() { }
-
-
-	constructor(private nonProfitService: NonProfitService ){
-		this.title = "Projects";
+	ngOnInit() { 
 		this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
 		.then(x => {
 			this.projects = x;
@@ -34,6 +30,26 @@ export class NonprofitDashboardComponent implements OnInit {
 			// 		this.projects[i].volunteers = x;
 			// });
 		});
+	}
+
+
+	constructor(private nonProfitService: NonProfitService ){
+		this.title = "My Dashboard";
+		// this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
+		// .then(x => {
+		// 	this.projects = x;
+		// 	this.nonProfitService.getVolunteers("dsgl")
+		// 		.then( x => {
+		// 			console.log(x);
+		// 			//this.volunteers.push(x);
+		// 			//this.projects.volunteers = x;
+		// 	});
+		// 	// for(var i=0; i<this.projects.length;i++){
+		// 	// 	nonProfitService.getVolunteers(this.projects[i].project_title)
+		// 	// 	.then( x => {
+		// 	// 		this.projects[i].volunteers = x;
+		// 	// });
+		// });
 		// });
 
 		

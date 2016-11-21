@@ -10,11 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
+const nonprofit_repository_service_1 = require('./repositories/nonprofit-repository.service');
 let AppComponent = class AppComponent {
-    constructor(route, router) {
+    constructor(route, router, nonProfitService) {
         this.route = route;
         this.router = router;
+        this.nonProfitService = nonProfitService;
         this.title = "Hello World";
+        //this.login = false;
+        this.login = this.nonProfitService.getLogin();
+        this.nonprofit = false;
+    }
+    ngOnInit() {
+    }
+    ngDoCheck() {
+        this.login = this.nonProfitService.getLogin();
+        this.nonprofit = this.nonProfitService.isNonProfit();
+    }
+    logout() {
+        this.nonProfitService.setLogin(false);
+        this.login = false;
     }
     nav(rt) {
         this.router.navigateByUrl('');
@@ -26,7 +41,7 @@ AppComponent = __decorate([
         templateUrl: './app/app.html',
         styleUrls: ['./app/app.css'],
     }), 
-    __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
+    __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, nonprofit_repository_service_1.NonProfitService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

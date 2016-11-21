@@ -27,6 +27,12 @@ let NonProfitService = class NonProfitService {
         let body = res.json();
         return body || {};
     }
+    setLogin(val) {
+        this.login = val;
+    }
+    getLogin() {
+        return this.login;
+    }
     postNonProfit(nonprofit) {
         let headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new http_1.RequestOptions({ headers: headers });
@@ -59,6 +65,24 @@ let NonProfitService = class NonProfitService {
     }
     setEmail(user) {
         this.email = user.email;
+        var t = "";
+        var onload = (data) => {
+            if (data['_body'] == "volunteer")
+                this.nonprofit = false;
+            else if (data['_body'] == "nonprofit")
+                this.nonprofit = true;
+            else {
+                this.nonprofit = false;
+                console.log("Neither volunteer nor nonprofit! WHAT SICK BEAST ARE YOU? ");
+            }
+        };
+        // this.getType(this.email)
+        //     .then(x => {
+        //         t = x;
+        //         this.isNonProfit(t);
+        //         });
+        this.getType(this.email)
+            .then(onload);
     }
     setProject(project) {
         this.currProject = project;
@@ -68,6 +92,19 @@ let NonProfitService = class NonProfitService {
     }
     getEmail() {
         return this.email;
+    }
+    isNonProfit() {
+        return this.nonprofit;
+    }
+    getType(email) {
+        let headers = new http_1.Headers({ 'Content-Type': 'text/html' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        return this.http
+            .get(this._apiUrl + "/volnonp.php?display=true" +
+            "&email=" + email, options)
+            .toPromise()
+            .then()
+            .catch(this.handleError);
     }
     postProject(project) {
         let headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
@@ -101,7 +138,7 @@ let NonProfitService = class NonProfitService {
         let options = new http_1.RequestOptions({ headers: headers });
         return this.http
             .get(this._apiUrl + "/projects.php?getProjects=true" +
-            "&np=" + encodeURIComponent(nonProfit), options)
+            "&np=" + nonProfit, options)
             .toPromise()
             .then(x => x.json())
             .catch(this.handleError);
