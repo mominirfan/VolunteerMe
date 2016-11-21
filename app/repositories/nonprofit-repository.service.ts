@@ -11,6 +11,8 @@ export class NonProfitService{
     private _apiUrl = "https://perunasoft.com/43231257";
     private _apiUrl2 = "http://private-a846b-volunteerme.apiary-mock.com";
     private email : string;
+    private nonprofit: boolean;
+
     constructor(private http: Http){
         this.email = "";
     }
@@ -67,9 +69,43 @@ export class NonProfitService{
     }
     public setEmail(user) {
         this.email = user.email;
+        var t = "";
+        var onload = (data) => {
+            if(data['_body'] == "volunteer")
+                this.nonprofit = false;
+            else if(data['_body'] == "nonprofit")
+                this.nonprofit = true;
+            else{
+                this.nonprofit = false;
+                console.log("Neither volunteer nor nonprofit! WHAT SICK BEAST ARE YOU? ");
+            }
+
+        };
+        // this.getType(this.email)
+        //     .then(x => {
+        //         t = x;
+        //         this.isNonProfit(t);
+        //         });
+         this.getType(this.email)
+            .then(onload);
     }
     public getEmail() : string {
         return this.email;
+    }
+    public isNonProfit(): boolean{
+        
+        return this.nonprofit;
+    }
+    public getType(email): Promise<any>{
+        let headers = new Headers({'Content-Type': 'text/html'});
+        let options = new RequestOptions({ headers: headers});
+
+        return this.http
+            .get(this._apiUrl + "/volnonp.php?display=true"+
+            "&email=" + email, options)
+            .toPromise()
+            .then()
+            .catch(this.handleError);
     }
     public postProject(project) : Promise<any[]>{
         let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});

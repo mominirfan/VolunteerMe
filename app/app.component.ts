@@ -18,6 +18,7 @@ export class AppComponent {
   }
   ngDoCheck(){
     this.login = this.nonProfitService.getLogin();
+    this.nonprofit = this.nonProfitService.isNonProfit();
   }
 	constructor(private route: ActivatedRoute, private router: Router, private nonProfitService: NonProfitService){
 		this.title = "Hello World";
