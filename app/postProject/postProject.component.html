@@ -2,6 +2,11 @@
       <h1>Post Project</h1>
 </div>
     <div class="form-group">
+        <label for="np_name">*Non-Profit Name: </label>
+        <input type="text" class="form-control" id="np_name" [(ngModel)] = "project.np_name"/>
+    </div>
+   
+    <div class="form-group">
         <label for="projName">*Project Title: </label>
         <input type="text" class="form-control" id="projName" [(ngModel)] = "project.project_title"/>
     </div>
@@ -35,10 +40,10 @@
         <label for="remote">Remote Work? (Y/N):</label>
         <input type="checkbox" id="remote" [(ngModel)]="project.remote_work">
     </div>
-    <div class="form-group">
+    <!--<div class="form-group">
         <label for="status">Completed?:</label>
         <input type="hidden" value="0" name="check[0]">
         <input type="checkbox" name="check[0]" id="status" value="1" [(ngModel)]="project.completed">
-    </div>
+    </div>-->
 
 <a class="btn btn-primary btn-block btn-lg" id="submitButton" routerLink="" (click) = "submit()"> Submit </a>

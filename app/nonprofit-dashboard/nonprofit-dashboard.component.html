@@ -8,18 +8,18 @@
     <br>
     <br>
 
-    <div *ngIf="nonprofits">
-    <div class="media" *ngFor="let nonprofit of nonprofits">
+    <div *ngIf="projects">
+    <div class="media" *ngFor="let project of projects">
         
             <span class="media-left">
                 
                 <img id="pic" src="http://xpenology.org/wp-content/themes/qaengine/img/default-thumbnail.jpg" alt="" />
             </span>
             <div class="media-body">
-                <h3 class="media-heading"> {{nonprofit.project_title }}</h3>
+                <h3 class="media-heading"> {{ project.project_title }}</h3>
                 <h5>Volunteers:</h5>
-                <span *ngFor="let volunteer of nonprofit.volunteers">
-                    <h6>{{volunteer}}</h6>
+                <span *ngFor="let volunteer of project.volunteers">
+                    <h6>{{ volunteer }}</h6>
                 </span>
                 <br>
                 <div class="sec-1-btn text-center btn btn-primary">Emails</div>

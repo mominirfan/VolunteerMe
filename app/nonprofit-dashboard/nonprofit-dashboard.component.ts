@@ -12,19 +12,29 @@ import { Headers, RequestOptions } from '@angular/http'
 export class NonprofitDashboardComponent implements OnInit {
 
 	title: string;
-	nonprofits: any[];
+	projects: any[];
 	ngOnInit() { }
 
 
 	constructor(private nonProfitService: NonProfitService ){
 		this.title = "Projects";
-		nonProfitService.get()
-		.then(x => {
-			this.nonprofits = x;
-			console.log(x);
-		});
-		console.log(this.nonprofits);
+		// nonProfitService.getSpecificProjects(nonprofit)
+		// .then(x => {
+		// 	this.projects = x;
+		// 	console.log(x);
+		// });
 
+		
+		// for(var i=0; i<this.projects.length;i++){
+		// 	nonProfitService.getVolunteers(project?)
+		// 	.then( x => {
+		// 		this.projects[i].volunteers = x;
+		// 	});
+		// }
+		
+	}
+	public getProjects(){
+		
 	}
 
 }
