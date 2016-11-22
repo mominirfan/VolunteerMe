@@ -46,4 +46,18 @@
         <input type="checkbox" name="check[0]" id="status" value="1" [(ngModel)]="project.completed">
     </div>-->
 
-<a class="btn btn-primary btn-block btn-lg" id="submitButton" routerLink="/nonprofit-dashboard" (click) = "submit()"> Submit </a>
+<a class="btn btn-primary btn-block btn-lg" id="submitButton" data-toggle="modal"  data-target="#myModal" > Submit </a>
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class = "close" id = "closeButton" routerLink="/nonprofit-dashboard" (click) = "submit()">x</span>
+            <h2>Completed!</h2>
+        </div>
+        <div class="modal-body">
+            <p>Thank you for your submission.</p>
+        </div>
+    </div>
+</div>

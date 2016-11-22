@@ -17,4 +17,6 @@ export class PostProjectComponent implements OnInit {
 	submit(){
 		this.nonProfitService.postProject(this.project);
 	}
+
+	
 }
