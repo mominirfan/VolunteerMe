@@ -32,21 +32,44 @@ let NonprofitDashboardComponent = class NonprofitDashboardComponent {
         // });
     }
     ngOnInit() {
+        var getVols = function (service, projects, i) {
+            //this.nonProfitService.getVolunteers(this.projects[i]["project_title"])
+            service.getVolunteers(projects["project_title"])
+                .then(y => {
+                projects["volunteers"] = y;
+                //this.projects[i]["volunteers"] = y;
+            });
+        };
         this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
             .then(x => {
             this.projects = x;
-            this.nonProfitService.getVolunteers("dsgl")
-                .then(x => {
-                console.log(x);
-                //this.volunteers.push(x);
-                //this.projects.volunteers = x;
-            });
-            // for(var i=0; i<this.projects.length;i++){
-            // 	nonProfitService.getVolunteers(this.projects[i].project_title)
-            // 	.then( x => {
-            // 		this.projects[i].volunteers = x;
-            // });
+            for (var i = 0; i < this.projects.length; i++) {
+                getVols(this.nonProfitService, this.projects[i], i);
+            }
+            console.log("HI");
         });
+        // this.nonProfitService.getSpecificProjects(this.nonProfitService.getEmail())
+        // .then(x => {
+        // 	this.projects = x;
+        // 	for(var i=0; i<this.projects.length;i++){
+        // 		//this.nonProfitService.getVolunteers(this.projects[i]["project_title"])
+        // 		this.nonProfitService.getVolunteers("dsgl")
+        // 		.then( y => {
+        // 			this.projects[i]["volunteers"] = y;
+        // 		});
+        // 	}
+        // this.nonProfitService.getVolunteers("dsgl")
+        // 	.then( x => {
+        // 		console.log(x);
+        // 		//this.volunteers.push(x);
+        // 		//this.projects.volunteers = x;
+        // });
+        // for(var i=0; i<this.projects.length;i++){
+        // 	nonProfitService.getVolunteers(this.projects[i].project_title)
+        // 	.then( x => {
+        // 		this.projects[i].volunteers = x;
+        // });
+        //console.log("Projects:" + this.projects);
     }
     getProjects() {
     }
