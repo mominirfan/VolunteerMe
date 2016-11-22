@@ -20,7 +20,8 @@ export class CreateNonprofitComponent implements OnInit {
 		this.title = "Create Non-Profit Account";
 	}
 	submit(){
-		this.nonProfitService.setEmail(this.nonprofit);
+		
 		this.nonProfitService.postNonProfit(this.nonprofit);
+		this.nonProfitService.setEmail(this.nonprofit);
 	}
 }

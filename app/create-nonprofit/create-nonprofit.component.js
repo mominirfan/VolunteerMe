@@ -18,8 +18,8 @@ let CreateNonprofitComponent = class CreateNonprofitComponent {
     }
     ngOnInit() { }
     submit() {
-        this.nonProfitService.setEmail(this.nonprofit);
         this.nonProfitService.postNonProfit(this.nonprofit);
+        this.nonProfitService.setEmail(this.nonprofit);
     }
 };
 CreateNonprofitComponent = __decorate([

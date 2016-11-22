@@ -73,6 +73,12 @@ let NonprofitDashboardComponent = class NonprofitDashboardComponent {
     }
     getProjects() {
     }
+    delete(index, project_title) {
+        this.nonProfitService.deleteProject(project_title)
+            .then(() => {
+            this.projects.splice(index, 1);
+        });
+    }
 };
 NonprofitDashboardComponent = __decorate([
     core_1.Component({

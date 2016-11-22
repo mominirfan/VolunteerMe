@@ -123,6 +123,16 @@ let NonProfitService = class NonProfitService {
             .then(() => project)
             .catch(x => alert(x.json().error));
     }
+    deleteProject(project_title) {
+        let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        let options = new http_1.RequestOptions({ headers: headers });
+        return this.http
+            .get(this._apiUrl + "/projects.php?delete=true" +
+            "&project_delete=" + project_title, options)
+            .toPromise()
+            .then()
+            .catch(this.handleError);
+    }
     addVolunteer(project) {
         let headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new http_1.RequestOptions({ headers: headers });

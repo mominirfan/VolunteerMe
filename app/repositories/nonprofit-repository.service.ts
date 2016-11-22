@@ -134,6 +134,17 @@ export class NonProfitService{
             .then(() => project)
             .catch(x => alert(x.json().error));
     }
+    public deleteProject(project_title): Promise<any[]>{
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+		let options = new RequestOptions({ headers: headers});
+
+        return this.http
+            .get(this._apiUrl + "/projects.php?delete=true" +
+            "&project_delete=" + project_title, options)
+            .toPromise()
+            .then()
+            .catch(this.handleError);
+    }
     public addVolunteer(project) : Promise<any[]>{
         let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
         let options = new RequestOptions({ headers: headers });
