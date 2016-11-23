@@ -9,6 +9,14 @@ import { LoginComponent } from '../login/login.component';
 
 export class ViewProjectComponent implements OnInit {
 	projects: any[];
+	login: boolean;
+	nonprofit: boolean;
+
+	ngDoCheck(){
+		this.login = this.nonProfitService.getLogin();
+		this.nonprofit = this.nonProfitService.isNonProfit();
+	}
+
 	ngOnInit() { }
 	email: string;
 	constructor(private nonProfitService: NonProfitService ){

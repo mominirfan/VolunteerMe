@@ -82,11 +82,12 @@
                         <!--<td><img src="http://67.media.tumblr.com/31c6f48b20da2ebcd7974bb54c148461/tumblr_mw7dtm6Az91spqx5oo1_500.jpg" alt="Volunteer Comm. App Needed" style="width:304px;height:228px;"></td>-->
                         <td>{{ project.project_title }}</td>
                         <td>{{ project.project_description }}</td>
-                        <td>{{ project.project_location }}</td>
+                        <td>{{ project.location }}</td>
                         <td>{{ project.start_date }}</td>
                         <td>{{ project.end_date }}</td>
                         <td>{{ project.req_skills }}</td>
-                        <td><button type="button" class="btn btn-success" (click)="signUp(project)"> VolunteerMe </button></td>
+                        <td><button type="button" class="btn btn-success" (click)="signUp(project)"
+                        *ngIf="login && !nonprofit"> VolunteerMe </button></td>
                         <!--<td><img src="http://67.media.tumblr.com/31c6f48b20da2ebcd7974bb54c148461/tumblr_mw7dtm6Az91spqx5oo1_500.jpg" alt="Volunteer Comm. App Needed" style="width:304px;height:228px;"></td>
                         <td>2015-08-05T08:40:51.620Z</td>
                         <td>Volunteer Comm. App Needed</td>
