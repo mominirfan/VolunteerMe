@@ -22,6 +22,7 @@ export class CreateNonprofitComponent implements OnInit {
 	submit(){
 		
 		this.nonProfitService.postNonProfit(this.nonprofit);
+		this.nonProfitService.setLogin(true);
 		this.nonProfitService.setEmail(this.nonprofit);
 	}
 }

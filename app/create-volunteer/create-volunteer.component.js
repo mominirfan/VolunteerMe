@@ -20,6 +20,7 @@ let CreateVolunteerComponent = class CreateVolunteerComponent {
     submit() {
         console.log(this.volunteer);
         this.nonProfitService.setEmail(this.volunteer);
+        this.nonProfitService.setLogin(true);
         this.nonProfitService.post(this.volunteer);
     }
 };
