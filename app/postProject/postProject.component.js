@@ -10,14 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const nonprofit_repository_service_1 = require('../repositories/nonprofit-repository.service');
+const router_1 = require('@angular/router');
 let PostProjectComponent = class PostProjectComponent {
-    constructor(nonProfitService) {
+    constructor(nonProfitService, router) {
         this.nonProfitService = nonProfitService;
+        this.router = router;
         this.project = {};
     }
     ngOnInit() { }
     submit() {
         this.nonProfitService.postProject(this.project);
+        this.router.navigateByUrl('nonprofit-dashboard');
     }
 };
 PostProjectComponent = __decorate([
@@ -26,7 +29,7 @@ PostProjectComponent = __decorate([
         templateUrl: './app/postProject/postProject.component.html',
         styleUrls: ['./app/postProject/postProject.component.css']
     }), 
-    __metadata('design:paramtypes', [nonprofit_repository_service_1.NonProfitService])
+    __metadata('design:paramtypes', [nonprofit_repository_service_1.NonProfitService, router_1.Router])
 ], PostProjectComponent);
 exports.PostProjectComponent = PostProjectComponent;
 //# sourceMappingURL=postProject.component.js.map

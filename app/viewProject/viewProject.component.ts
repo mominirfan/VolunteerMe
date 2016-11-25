@@ -16,15 +16,19 @@ export class ViewProjectComponent implements OnInit {
 		this.login = this.nonProfitService.getLogin();
 		this.nonprofit = this.nonProfitService.isNonProfit();
 	}
-
-	ngOnInit() { }
+	ngOnChange(){
+		
+	}
+	ngOnInit() { 
+		this.nonProfitService.getProjects()
+			.then( x => {
+				this.projects = x;
+			});
+	}
 	email: string;
 	constructor(private nonProfitService: NonProfitService ){
 
-		nonProfitService.getProjects()
-		.then( x => {
-			this.projects = x;
-		});
+		
 	}
 	signUp(project){
 		//this.model = this.loginComponent.model;
