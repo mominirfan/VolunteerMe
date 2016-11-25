@@ -16,9 +16,10 @@ export class PostProjectComponent implements OnInit {
 
 	}
 	submit(){
-		this.nonProfitService.postProject(this.project);
-		this.router.navigateByUrl('nonprofit-dashboard');
-		
+		this.nonProfitService.postProject(this.project)
+			.then(() =>{
+				this.router.navigateByUrl('nonprofit-dashboard');
+		});
 	}
 
 	

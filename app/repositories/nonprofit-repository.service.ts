@@ -127,9 +127,8 @@ export class NonProfitService{
             "&start_date=" + encodeURIComponent(project.start_date) +
             "&end_date=" + encodeURIComponent(project.end_date)+
             "&remote_work=" + encodeURIComponent(project.remote_work) +
-            "&req_skills=" + encodeURIComponent(project.req_skills) + 
-            "&published_at=" + encodeURIComponent(project.published_at)
-            ,options)
+            "&req_skills=" + encodeURIComponent(project.req_skills) 
+             ,options)
             .toPromise()
             .then(() => project)
             .catch(x => alert(x.json().error));
