@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 @Component({
 	selector: 'viewProject',
 	templateUrl: './app/viewProject/viewProject.component.html',
+	styleUrls: ['./app/viewProject/viewProject.component.css']
 })
 
 export class ViewProjectComponent implements OnInit {

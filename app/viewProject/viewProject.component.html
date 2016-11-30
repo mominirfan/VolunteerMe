@@ -86,7 +86,7 @@
                         <td>{{ project.start_date }}</td>
                         <td>{{ project.end_date }}</td>
                         <td>{{ project.req_skills }}</td>
-                        <td><button type="button" class="btn btn-success" (click)="signUp(project)"
+                        <td><button type="button" class="btn btn-success" data-toggle="modal"  data-target="#myModal"
                         *ngIf="login && !nonprofit"> VolunteerMe </button></td>
                         <!--<td><img src="http://67.media.tumblr.com/31c6f48b20da2ebcd7974bb54c148461/tumblr_mw7dtm6Az91spqx5oo1_500.jpg" alt="Volunteer Comm. App Needed" style="width:304px;height:228px;"></td>
                         <td>2015-08-05T08:40:51.620Z</td>
@@ -117,4 +117,17 @@
         </div>-->
     </div>
 
+</div>
+
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class = "close" id = "closeButton" data-dismiss="modal" (click)="signUp(project)">x</span>
+            <h2>Congratulation!</h2>
+        </div>
+        <div class="modal-body">
+            <p>You have Signed in successfully!</p>
+        </div>
+    </div>
 </div>
