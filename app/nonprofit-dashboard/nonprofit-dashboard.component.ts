@@ -91,7 +91,7 @@ export class NonprofitDashboardComponent implements OnInit {
 	public delete(index, project_title){
 		this.nonProfitService.deleteProject(project_title)
 		.then(() => {
-			this.projects.splice(index-1,1);
+			this.projects.splice(index,1);
 		});
 	}
 

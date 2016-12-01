@@ -27,7 +27,7 @@
                         <th>   </th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let project of projects">
+                <tbody *ngFor="let project of projects; let i = index">
                      <tr>
                         <td> {{project.project_title }}</td>
                         <td>   
@@ -38,7 +38,7 @@
                         <td>
                         <span class="media-right">
                             <!--<div class="btn btn-success"> Completed </div>-->
-                            <div class="btn btn-danger" (click) = "delete($index, project.project_title)"> Delete </div>
+                            <div class="btn btn-danger" (click) = "delete(i, project.project_title)"> Delete </div>
                         </span>
                         </td>
                     </tr>
