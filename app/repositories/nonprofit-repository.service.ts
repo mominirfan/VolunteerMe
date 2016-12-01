@@ -117,11 +117,11 @@ export class NonProfitService{
     public postProject(project) : Promise<any[]>{
         let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
         let options = new RequestOptions({ headers: headers });
-
+        //"&nonprofit=" + encodeURIComponent(project.np_email)
         return this.http
             .post(this._apiUrl + "/projects.php?add=true",
             "project_title=" + encodeURIComponent(project.project_title) +
-            "&nonprofit=" + encodeURIComponent(project.np_email)+
+            "&nonprofit=" + encodeURIComponent(this.email)+
             "&project_description=" + encodeURIComponent(project.project_description) + 
             "&location=" + encodeURIComponent(project.location) + 
             "&start_date=" + encodeURIComponent(project.start_date) +
